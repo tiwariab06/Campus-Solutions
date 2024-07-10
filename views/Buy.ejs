@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/Buy.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Available Notes</h1>
+      <div id="card">
+        <% Notes.forEach(notes => { %>
+        <ul>
+          <li><strong>Name:</strong> <%= notes.name %></li>
+          <li><strong>Phone:</strong> <%= notes.phone %></li>
+          <li><strong>Email:</strong> <%= notes.email %></li>
+          <li><strong>Subject:</strong> <%= notes.subject %></li>
+          <li><strong>Type:</strong> <%= notes.type %></li>
+          <li><strong>Price:</strong> <%= notes.price %></li>
+        </ul>
+        <% }) %>
+      </div>
+      <p>Contact the Seller to Buy</p>
+    </div>
+  </body>
+</html>

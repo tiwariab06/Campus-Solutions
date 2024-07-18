@@ -42,7 +42,6 @@ userSchema.pre("save", async function (next) {
 // it is a virtual function study the documentation
 userSchema.static("matchPassword", async function (email, password) {
   const user = await this.findOne({ email });
-  console.log(user);
   if (!user) throw new Error("User Not Found");
 
   const salt = user.salt;

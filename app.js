@@ -23,7 +23,7 @@ app.use(cookieParser());
 app.use(checkForAuthenticationCookie("token"));
 
 mongoose
-  .connect("mongodb://localhost:27017/")
+  .connect(process.env.MONGO_URL)
   .then((e) => console.log("MongoDB connected"));
 
 app.listen(PORT, () => {

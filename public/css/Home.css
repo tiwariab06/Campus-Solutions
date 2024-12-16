@@ -1,3 +1,4 @@
+/* Base Styles */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -5,6 +6,7 @@ body {
   background-color: #1c1c1c;
 }
 
+/* Navigation Bar */
 nav {
   background-color: #1c1c1c;
   color: white;
@@ -52,6 +54,7 @@ nav ul li a:hover {
   transform: scale(1.1);
 }
 
+/* Dropdown Menu */
 nav ul li.dropdown .dropdown-content {
   display: none;
   position: absolute;
@@ -63,6 +66,7 @@ nav ul li.dropdown .dropdown-content {
   transition: opacity 0.3s, visibility 0.3s;
   opacity: 0;
   visibility: hidden;
+  right: 0; /* Align dropdown to the right to prevent overflow */
 }
 
 nav ul li.dropdown .dropdown-content a {
@@ -78,12 +82,14 @@ nav ul li.dropdown .dropdown-content a:hover {
   transform: scale(1.1);
 }
 
+/* Show dropdown on hover */
 nav ul li.dropdown:hover .dropdown-content {
   display: block;
   opacity: 1;
   visibility: visible;
 }
 
+/* Header Section */
 header {
   text-align: center;
   padding: 100px 20px;
@@ -104,6 +110,7 @@ header p {
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
 }
 
+/* Section Styling */
 section {
   padding: 60px 20px;
   text-align: center;
@@ -142,4 +149,23 @@ section ul {
 section ul {
   list-style: none;
   padding: 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav ul li.dropdown .dropdown-content {
+    position: static; /* Allows dropdown to flow below the navigation item */
+    width: 100%; /* Full width on mobile */
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  nav ul li.dropdown .dropdown-content a {
+    padding: 12px 20px; /* Extra padding for dropdown items on mobile */
+  }
 }

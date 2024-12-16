@@ -4,22 +4,26 @@ const path = require("path");
 const User = require("../models/Users"); //*
 const app = express();
 app.use(express.urlencoded({ extended: false }));
-router.get("/login", (req, res) => {
+router.get("/studentlogin", (req, res) => {
   res.sendFile(path.join(__dirname, "../public", "Login.html"));
 });
 
-router.get("/signup", (req, res) => {
+router.get("/studentsignup", (req, res) => {
   res.sendFile(path.join(__dirname, "../public", "Signup.html"));
 });
 
 router.post("/signup", async (req, res) => {
-  const { fullName, email, password } = req.body;
+  const { fullName, email, password, year, section, branch } = req.body;
 
   await User.create({
     fullName,
     email,
     password,
+    year,
+    section,
+    branch,
   });
+  console.log("Signup SucessFull You Can Login Now");
   return res.redirect("/");
 });
 

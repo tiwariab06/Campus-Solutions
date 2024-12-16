@@ -6,6 +6,8 @@ const pyqRoute = require("./routes/Pyq");
 const mongoose = require("mongoose");
 const sellRoute = require("./routes/Sell");
 const buyRoute = require("./routes/Buy");
+const facultyRoute = require("./routes/FacultyLogin");
+const fcloggedinRoute = require("./routes/fclogged");
 const cookieParser = require("cookie-parser");
 const { checkForAuthenticationCookie } = require("./midllewares/auth");
 
@@ -15,13 +17,13 @@ const PORT = process.env.PORT || 8000;
 app.set("view engine", "ejs");
 app.set("views", path.resolve("./views"));
 
-app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname, "public")));
 app.use(cookieParser());
 app.use(checkForAuthenticationCookie("token"));
 
 mongoose
-  .connect(process.env.MONGO_URL)
+  .connect("mongodb://localhost:27017/")
   .then((e) => console.log("MongoDB connected"));
 
 app.listen(PORT, () => {
@@ -38,3 +40,5 @@ app.use("/user", userRoute);
 app.use("/", pyqRoute);
 app.use("/", sellRoute);
 app.use("/buy", buyRoute);
+app.use("/faculty", facultyRoute);
+app.use("/", fcloggedinRoute);

@@ -1,0 +1,148 @@
+/* General Styles */
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: url("/images/background.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: #333;
+}
+
+/* Center the card */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Card styles */
+.card {
+  display: flex;
+  justify-content: space-between; /* Space between left and right sections */
+  background: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 800px; /* Max width to accommodate two sides */
+  width: 100%;
+}
+
+/* Left Side */
+.card .left {
+  flex: 1;
+  padding-right: 20px; /* Space between left and right sections */
+}
+
+/* Right Side */
+.card .right {
+  flex: 1;
+  padding-left: 20px; /* Space between left and right sections */
+}
+
+/* Header */
+.card h1 {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: #444;
+  text-align: center;
+  width: 100%;
+}
+
+/* Form styles */
+.card form {
+  display: flex;
+  flex-direction: column;
+}
+
+.card label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+/* Input styles */
+.card input,
+.card select,
+.card button {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.card input:focus,
+.card select:focus,
+.card button:focus {
+  outline: none;
+  border-color: #555;
+}
+
+/* Button styles */
+.card button {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.card button:hover {
+  background-color: #0056b3;
+}
+
+/* Links */
+.card a {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.card a:hover {
+  text-decoration: underline;
+}
+
+/* Small text */
+.card small {
+  color: #555;
+  font-size: 0.8rem;
+}
+
+/* Additional Fixes for Right Side */
+.card .right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensure space is distributed */
+}
+
+/* Adjusting the layout of input fields on the right */
+.card .right label {
+  margin-bottom: 10px;
+}
+
+/* Responsiveness for small screens */
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column; /* Stack left and right sections on smaller screens */
+    align-items: center;
+  }
+
+  .card .left,
+  .card .right {
+    padding: 0;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  .card h1 {
+    font-size: 1.5rem;
+  }
+
+  .card input,
+  .card select,
+  .card button {
+    font-size: 0.9rem;
+  }
+}

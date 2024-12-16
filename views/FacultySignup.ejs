@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign UP</title>
+    <link rel="stylesheet" href="/css/Faculty.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="left">
+          <h1>Faculty Signup</h1>
+          <form action="/faculty/facultysignup" method="POST">
+            <label for="name">Name:</label>
+            <input
+              type="text"
+              id="name"
+              name="Name"
+              placeholder="Enter your name"
+              required
+            />
+
+            <label for="email">Email:</label>
+            <input
+              type="email"
+              id="email"
+              name="Email"
+              placeholder="Enter your email"
+              required
+            />
+
+            <label for="password">Password:</label>
+            <input
+              type="password"
+              id="password"
+              name="Password"
+              placeholder="Enter a strong password"
+              required
+            />
+
+            <label for="year">Year:</label>
+            <select id="year" name="Year" required>
+              <option value="" disabled selected>Select your year</option>
+              <option value="1">1st Year</option>
+              <option value="2">2nd Year</option>
+              <option value="3">3rd Year</option>
+              <option value="4">4th Year</option>
+            </select>
+        </div>
+        <div class="right">
+          <label for="department">Department:</label>
+          <select id="department" name="Department" required>
+            <option value="" disabled selected>Select your department</option>
+            <option value="Computer Science">Computer Science</option>
+            <option value="Electronics">Electronics</option>
+            <option value="Mechanical">Mechanical</option>
+            <option value="Civil">Civil</option>
+            <option value="Electrical">Electrical</option>
+          </select>
+
+          <label for="sections">Sections:</label>
+          <select id="sections" name="Sections" multiple required>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="D">D</option>
+          </select>
+
+          <label for="subjects">Subjects:</label>
+          <select id="subjects" name="Subjects" multiple required>
+            <option value="Mathematics">Mathematics</option>
+            <option value="Physics">Physics</option>
+            <option value="Chemistry">Chemistry</option>
+            <option value="Programming">Programming</option>
+            <option value="Data Structures">Data Structures</option>
+          </select>
+
+          <button type="submit">Sign Up</button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

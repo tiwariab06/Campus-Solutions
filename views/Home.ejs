@@ -10,25 +10,27 @@
     <nav>
       <div class="logo">Campus Solutions</div>
       <ul class="nav-links">
-        <li><a href="/Pyq">PYQ's</a></li>
-        <% if (locals.user) { %> <% if (user.email==="cse21130@glbitm.ac.in") {
-        %>
+        <% if (locals.user) { %> <% if (user.Email==="a@g.com") { %>
         <li><a href="/sell">Sell Notes</a></li>
         <li><a href="buy/getdata">Buy Notes</a></li>
-        <li><%= user.fullName %></li>
+        <li><%= user.Name %></li>
         <li><a href="/PyqFiles">Upload Pyq</a></li>
         <li><a href="/user/logout">LogOut</a></li>
         <% } else { %>
+        <li><a href="/Pyq">PYQ's</a></li>
         <li><a href="/sell">Sell Notes</a></li>
         <li><a href="buy/getdata">Buy Notes</a></li>
         <li><%= user.fullName %></li>
         <li><a href="/user/logout">LogOut</a></li>
         <% } %> <% } else { %>
+
         <li class="dropdown">
           <a href="#" class="dropbtn">Login/Signup</a>
           <div class="dropdown-content">
-            <a href="/user/login">Login</a>
-            <a href="/user/signup">Signup</a>
+            <a href="/user/studentlogin">Login as Student</a>
+            <a href="/user/studentsignup">Signup as Student</a>
+            <a href="/faculty/facultylogin">Login as Faculty</a>
+            <a href="/faculty/facultysignup">Signup as Faculty</a>
           </div>
         </li>
         <% } %>

@@ -68,7 +68,9 @@ router.post("/facultylogin", async (req, res) => {
     res.cookie("token", token).redirect("/fc"); // Set cookie and redirect
   } catch (error) {
     console.error("Login error:", error.message);
+    console.log(req.body);
     res.render("Err", {
+      user: req.body,
       message: "Invalid credentials. Please try again.",
     });
   }

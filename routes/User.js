@@ -5,7 +5,9 @@ const User = require("../models/Users"); //*
 const app = express();
 app.use(express.urlencoded({ extended: false }));
 router.get("/studentlogin", (req, res) => {
-  res.sendFile(path.join(__dirname, "../public", "Login.html"));
+  res.render("studentlogin", {
+    user: req.body,
+  });
 });
 
 router.get("/studentsignup", (req, res) => {
@@ -33,7 +35,9 @@ router.post("/login", async (req, res) => {
     const token = await User.matchPassword(email, password);
     return res.cookie("token", token).redirect("/");
   } catch (error) {
-    return res.render("Err");
+    return res.render("Err", {
+      user: req.body,
+    });
   }
 });
 

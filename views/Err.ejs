@@ -10,7 +10,11 @@
     <div id="card">
       <p>Incorrect Email or Password</p>
       <br />
+      <% if (user.UserType === "Faculty") { %>
+      <a href="/faculty/facultylogin">Click To Login Again</a>
+      <% } else { %>
       <a href="/user/studentlogin">Click To Login Again</a>
+      <% } %>
     </div>
   </body>
 </html>

@@ -11,6 +11,17 @@
       <div class="card">
         <h1>Faculty Login</h1>
         <form action="/faculty/facultylogin" method="POST">
+          <label for="email">UserType:</label>
+          <input
+            type="Text"
+            id="email"
+            name="UserType"
+            value="Faculty"
+            placeholder="Faculty"
+            required
+            readonly
+          />
+
           <label for="email">Email:</label>
           <input
             type="email"
